@@ -2,6 +2,32 @@
 
 {% block content %}
 
-log in page
+<style>
+    input{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .row{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+</style>
+
+<div class="container">
+    <h3 class="text-center py-3">Log In</h3>
+    <form action="{% url 'signup' %}" method="post">
+        {% csrf_token %}
+        <div class="col">
+            <div class="mx-auto w-50 p-3 bg-light">
+                <div class="row">
+                    <input class="mx-auto" type="text" name="username" placeholder="Username"/>
+                </div>
+                <div class="row">
+                    <input class="mx-auto" type="password" name="password" placeholder="Password"/>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
 
 {% endblock %}
