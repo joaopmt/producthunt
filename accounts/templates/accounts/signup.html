@@ -26,11 +26,19 @@
                     <input class="mx-auto" type="password" name="password" placeholder="Password"/>
                 </div>
                 <div class="row">
-                    <input class="mx-auto" type="password" name="rpt_password" placeholder="Repeat Password"/>
+                    <input class="mx-auto" type="password" name="conf_password" placeholder="Confirm Password"/>
+                </div>
+                <div class="row">
+                    <input class="mx-auto btn btn-primary mt-3" type="submit" value="Sign Up"/>
                 </div>
             </div>
         </div>
     </form>
+    {% if error %}
+    <p align="center" style="color: crimson;">{{ error }}</p>
+    <br>
+    <br>
+    {% endif %}
 </div>
 
 {% endblock %}
