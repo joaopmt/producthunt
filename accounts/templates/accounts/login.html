@@ -15,7 +15,7 @@
 
 <div class="container">
     <h3 class="text-center py-3">Log In</h3>
-    <form action="{% url 'signup' %}" method="post">
+    <form action="{% url 'login' %}" method="post">
         {% csrf_token %}
         <div class="col mx-auto w-50 p-3 bg-light">
             <div class="row">
@@ -29,6 +29,11 @@
             </div>
         </div>
     </form>
+    {% if error %}
+    <p align="center" style="color: crimson;">{{ error }}</p>
+    <br>
+    <br>
+    {% endif %}
 </div>
 
 {% endblock %}
