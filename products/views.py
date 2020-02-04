@@ -10,11 +10,11 @@ def homepage(request):
 def create(request):
     if request.method == 'POST':
         if (
-            request.POST['title']  and
-            request.POST['body']   and
-            request.POST['url']    and
-            request.FILES['image'] and    
-            request.FILES['icon']
+            request.POST['title'] and
+            request.POST['body']  and
+            request.POST['url']   and
+            request.FILES.get('image', False) and
+            request.FILES.get('icon', False) 
         ):
             product = Product()
             product.title = request.POST['title']
@@ -31,7 +31,7 @@ def create(request):
             product.save()
             return redirect('/products/' + str(product.id))
         else:
-            return render(request, 'products/create.html', {'error':'All fields are rqeuired'})
+            return render(request, 'products/create.html', {'error':'All fields are required'})
     else:
         return render(request, 'products/create.html')
 
