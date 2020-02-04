@@ -34,7 +34,8 @@
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav ml-auto">
                         {% if user.is_authenticated %}
-                        <h5 class="nav-item px-3 my-auto">{{ user.get_username }}</h5>
+                        <h5 class="nav-item px-4 my-auto">{{ user.get_username }}</h5>
+                        <a class="nav-item nav-link px-3" href="{% url 'create' %}"><b>Create</b></a>
                         <a class="nav-item nav-link px-3" href="javascript:{document.getElementById('logout').submit()}"><b>Log Out</b></a>
                         <form id="logout" method="POST" action="{% url 'logout' %}">
                             {% csrf_token %}
