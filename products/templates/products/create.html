@@ -17,26 +17,26 @@
     <h3 class="text-center py-3">Create</h3>
     <form action="{% url 'create' %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        <div class="col mx-auto w-50 p-3 bg-light">
+        <div class="col mx-auto w-100 p-3 bg-light">
             <div class="row mx-auto">
-                <div class="mx-auto">Title:</div>
-                <input class="mx-auto" type="text" name="title"/>
+                <div class="col-1 ml-auto text-center">Title:</div>
+                <input class="col-11" type="text" name="title"/>
             </div>
             <div class="row mx-auto">
-                <div class="mx-auto">Body:</div>
-                <input class="mx-auto" type="textbox" name="body"/>
+                <div class="col-1 ml-auto text-center">Body:</div>
+                <input class="col-11" type="textbox" name="body"/>
             </div>
             <div class="row mx-auto">
-                <div class="mx-auto">URL:</div>
-                <input class="mx-auto" type="text" name="url"/>
+                <div class="col-1 ml-auto text-center">URL:</div>
+                <input class="col-11" type="text" name="url"/>
             </div>
             <div class="row mx-auto">
-                <div class="mx-auto">Image:</div>
-                <input class="mx-auto" type="file" name="image"/>
+                <div class="col-1 ml-auto text-center">Image:</div>
+                <input class="col-11" type="file" name="image"/>
             </div>
             <div class="row mx-auto">
-                <div class="mx-auto">Icon:</div>
-                <input class="mx-auto" type="file" name="icon"/>
+                <div class="col-1 ml-auto text-center">Icon:</div>
+                <input class="col-11" type="file" name="icon"/>
             </div>
             <div class="row">
                 <input class="mx-auto btn btn-primary mt-3" type="submit" value="Add Product"/>
