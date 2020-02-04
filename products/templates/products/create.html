@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+    input{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .row{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+</style>
+
+<div class="container">
+    <h3 class="text-center py-3">Create</h3>
+    <form action="{% url 'create' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="col mx-auto w-50 p-3 bg-light">
+            <div class="row mx-auto">
+                <div class="mx-auto">Title:</div>
+                <input class="mx-auto" type="text" name="title"/>
+            </div>
+            <div class="row mx-auto">
+                <div class="mx-auto">Body:</div>
+                <input class="mx-auto" type="textbox" name="body"/>
+            </div>
+            <div class="row mx-auto">
+                <div class="mx-auto">URL:</div>
+                <input class="mx-auto" type="text" name="url"/>
+            </div>
+            <div class="row mx-auto">
+                <div class="mx-auto">Image:</div>
+                <input class="mx-auto" type="file" name="image"/>
+            </div>
+            <div class="row mx-auto">
+                <div class="mx-auto">Icon:</div>
+                <input class="mx-auto" type="file" name="icon"/>
+            </div>
+            <div class="row">
+                <input class="mx-auto btn btn-primary mt-3" type="submit" value="Add Product"/>
+            </div>
+        </div>
+    </form>
+    {% if error %}
+    <p align="center" style="color: crimson;">{{ error }}</p>
+    <br>
+    <br>
+    {% endif %}
+</div>
+
+
+{% endblock %}
